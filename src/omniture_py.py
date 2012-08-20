@@ -24,7 +24,7 @@ class OmniturePy:
         method-- The Omniture Method Name (ex. Report.QueueTrended, Company.GetReportSuites)
         request_data-- Details of method invocation, in Python dictionary/list form.
         """
-        request = urllib2.Request('https://api.omniture.com/admin/1.2/rest/?method=%s' % method, json.dumps(request_data))
+        request = urllib2.Request('https://api.omniture.com/admin/1.3/rest/?method=%s' % method, json.dumps(request_data))
         request.add_header('X-WSSE', self.__get_header())
         return  json.loads(urllib2.urlopen(request).read())
     
